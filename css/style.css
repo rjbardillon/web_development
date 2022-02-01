@@ -87,3 +87,13 @@ html, body {
 .about-carmona {
   padding: 20px;
 }
+
+.registration {
+  padding: 20px;
+}
+
+.instructions {
+  border-style: solid;
+  margin-top: 10px;
+  padding: 27px;
+}

@@ -4,7 +4,7 @@ if (isset($_POST['submit'])) {
     $surname = $_POST["surname"];
     $givenName = $_POST["given"];
     $middleName = $_POST["middle"];
-    $username = $givenName[0].$middleName[0].$surname;
+    $username = strtolower($givenName[0].$middleName[0].$surname);
     $email = $_POST["email"];
     $password = $_POST["password"];
     $confirmPassword = $_POST["confirmPassword"];
