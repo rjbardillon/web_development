@@ -1,4 +1,7 @@
-<?php include('header.php'); ?>
+<?php 
+    $page = "create-account";
+    include('header.php'); 
+?>
 <div class="container create-account">
     <form action="includes/create-account.inc.php" method="post">
         <input type="text" name="surname" placeholder="Surname" required>

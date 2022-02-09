@@ -5,8 +5,8 @@
             alt="Carmona Logo"
             class="carmona-logo"
         />
-        <li><a href="about-us.html">About Us</a></li>
-        <li><a href="contact-us.html">Contact Us</a></li>
+        <li><a href="about-us.php">About Us</a></li>
+        <li><a href="contact-us.php">Contact Us</a></li>
         </ul>
     </footer>
 </body>

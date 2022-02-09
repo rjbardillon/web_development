@@ -5,8 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="carmona-logo.png" />
     <script src="includes/functionality.js"></script>
-    <title>Document</title>
+    <title><?php 
+                if($page == 'registration'){echo 'Registration';}
+                elseif($page == 'index'){echo 'Census';}
+                elseif($page == 'login'){echo 'Login';}
+                elseif($page == 'create-account'){echo 'Create Account';}
+                elseif($page == 'home'){echo 'Home';}
+                elseif($page == 'about'){echo 'About Us';}
+                elseif($page == 'contact'){echo 'Contact Us';}
+            ?>
+    </title>
   </head>
   <body>
     <nav class="navigation">

@@ -83,3 +83,23 @@ function loginUser($connection, $username, $password){
         exit();
     }
 }
+
+function insertData($connection, $username, $q1, $q2o1, $q2o2, $q2o3, 
+                $q2o4, $q2o5, $q3, $phoneNumber, $firstName, $middleName,
+                $lastName, $gender, $birthday, $race) {
+    $sql = "INSERT INTO user_data(username, q1, q2o1, q2o2, q2o3, q2o4, q2o5, q3, phone, firstName, middleName, lastName, gender, birthday, race) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+    $stmt = mysqli_stmt_init($connection);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../home.php?error=stmterror");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "sssssssssssssss",$username, $q1, $q2o1, $q2o2, $q2o3, 
+                $q2o4, $q2o5, $q3, $phoneNumber, $firstName, $middleName,
+                $lastName, $gender, $birthday, $race);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("location: ../home.php?error=none");
+    exit();
+}

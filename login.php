@@ -1,4 +1,7 @@
-<?php include('header.php'); ?>
+<?php 
+    $page = "login";
+    include('header.php');
+ ?>
 <div class="container login">
     <form action="includes/login.inc.php" method="post">
         <input type="text" name="username" placeholder="Username/Email..." required>

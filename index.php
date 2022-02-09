@@ -1,6 +1,7 @@
 <?php 
-  session_start();
-  include_once 'header.php';
+    session_start();
+    $page = "index";
+    include_once 'header.php';
     if (isset($_SESSION['username'])) {
         header("location: home.php");
         exit();
