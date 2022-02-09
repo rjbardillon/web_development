@@ -9,7 +9,7 @@
 ?>
 
 <div class="container home">
-    <h1>About Us Page</h1>
+    <h1>About Us Page Test</h1>
 </div>
 
 <?php include('footer.php'); ?>
