@@ -59,7 +59,7 @@ html, body {
 
 .index {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   width: 100%;
   height: 100%;
 }
