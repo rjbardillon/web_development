@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: blanchedalmond;
   height: 100%;
@@ -12,11 +13,15 @@ html, body {
 
 .navigation {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   min-height: 100px;
   width: 100%;
-  background-color: rgb(241, 233, 233);
+  background-image: url(../images/footer.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .links {
@@ -36,8 +41,9 @@ html, body {
   display: block;
   text-decoration: none;
   font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgb(0, 0, 0);
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+  color: wheat;
   padding: 0 20px;
 }
 
@@ -59,6 +65,7 @@ html, body {
 
 .index {
   display: flex;
+  position: relative;
   flex-direction: row-reverse;
   width: 100%;
   height: 100%;
@@ -68,24 +75,65 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 5px;
   position: relative;
   width: 100%;
   bottom: 0;
-  background-color: black;
-}
-
-.footer li a {
-  color: wheat;
+  background-image: url(../images/footer.png);
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position: center center;
 }
 
 .basic-information {
+  position: relative;
+  text-transform: uppercase;
+  color: whitesmoke;
   padding: 20px;
-  background-color: white;
+  text-align: center;
+  border: 3px ridge black;
+  border-radius: 15px;
+  background-color: rgba(0,0,0, 0.4);
+  margin: 10px;
 }
 
 .about-carmona {
+  font-family:serif;
+  color: whitesmoke;
+  font-size: 1.2rem;
+  letter-spacing: 3px; 
   padding: 20px;
+  position: relative;
+  display: grid;
+  text-align: center;
+  padding: 50px;
+
+}
+
+.index::before{
+  background-image: url(../images/carmona.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  filter: blur(3px);
+}
+
+.border{
+  border: 5px ridge black;
+  border-radius: 25px;
+  background-color: rgba(0,0,0, 0.4);
+  padding: 20px;
+}
+
+.text{
+  position: relative;
+  
 }
 
 .registration {
@@ -97,4 +145,3 @@ html, body {
   margin-top: 10px;
   padding: 27px;
 }
-
