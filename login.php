@@ -4,10 +4,11 @@
  ?>
 <div class="container login">
     <div class="login-form">
-        <form action="includes/login.inc.php" method="post"><br><br><br><br><br><br><br><br>
-            <input type="text" name="username" placeholder="Username/Email..." required><br><br>
+        <form action="includes/login.inc.php" method="post">
+            <h2>Login</h2>
+            <input type="text" name="username" placeholder="Username/Email..." required>
             <input type="password" name="password" placeholder="Password" required><br><br>
-            <input type="submit" name="submit" value="Login"><br><br>
+            <input type="submit" name="submit" value="Login"><br>
             <a href="forgot-password.php">Forgot Password?</a>
         </form>
     </div>
