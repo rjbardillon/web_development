@@ -11,22 +11,22 @@
 <div class="container registration">
     <h1>Registration Page</h1>
     <div class="instructions">
-        <h4>Before you answer Question 1, count the people living in this
-    house, apartment, or mobile home using our guidelines.</h4>
+        <h3>Before you answer Question 1, count the people living in this
+    house, apartment, or mobile home using our guidelines.</h3>
         <ul>
             <li>Count all people, including babies, who live and sleep here
     most of the time.</li>
             <li>If no one lives and sleeps at this address most of the time, go
-    online at ourwebsite.gov or call the number on page 8.</li>
+    online at ourwebsite.gov or call the number on page 8.</li><br>
         </ul>
-        <h4>The census must also include people without a permanent
-    place to live, so:</h4>
+        <h3>The census must also include people without a permanent
+    place to live, so:</h3>
         <ul>
             <li>If someone who does not have a permanent place to live is
-    staying here on April 1, 2020, count that person.</li>
+    staying here on April 1, 2020, count that person.</li><br>
         </ul>
-        <h4>The Census Bureau also conducts counts in institutions and
-    other places, so:</h4>
+        <h3>The Census Bureau also conducts counts in institutions and
+    other places, so:</h3>
         <ul>
             <li>Do not count anyone living away from here, either at college
     or in the Armed Forces.</li>
@@ -92,13 +92,13 @@
                     there is someone living here who pays the rent or owns this
                     residence, start by listing him or her as Person 1. If the
                     owner or the person who pays the rent does not live here,
-        start by listing any adult living here as Person 1. <br>What is Person 1’s name? </b>Print name below.</li>
-                    <label for="fName">First Name</label>
-                    <input type="text" name="fName" id="fName" oninput="this.value = this.value.toUpperCase()" maxlength="50">
-                    <label for="MI">Middle Initial</label>
-                    <input type="text" name="MI" id="MI" oninput="this.value = this.value.toUpperCase()" maxlength="1">
-                    <label for="lName">Last Name</label>
-                    <input type="text" name="lName" id="lName" oninput="this.value = this.value.toUpperCase()" maxlength="60">
+        start by listing any adult living here as Person 1. <br>What is Person 1’s name? </b>Print name below.</li><br>
+                    <label for="fName">First Name</label><br>
+                    <input type="text" name="fName" id="fName" oninput="this.value = this.value.toUpperCase()" maxlength="50"><br>
+                    <label for="MI">Middle Initial</label><br>
+                    <input type="text" name="MI" id="MI" oninput="this.value = this.value.toUpperCase()" maxlength="1"><br>
+                    <label for="lName">Last Name</label><br>
+                    <input type="text" name="lName" id="lName" oninput="this.value = this.value.toUpperCase()" maxlength="60"><br>
                 </div>
                     <!-- 6 -->
                 <div class="q6">

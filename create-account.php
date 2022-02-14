@@ -5,14 +5,14 @@
 <div class="container create-account">
     <div class="create-account-form">
         <form action="includes/create-account.inc.php" method="post">
-            <br><br><br>
-            <h2>Create Account</h2>
+            <br>
+            <h2>Create Account</h2><br>
             <input type="text" name="surname" placeholder="Surname" required>
             <input type="text" name="given" placeholder="Given Name" required>
             <input type="text" name="middle" placeholder="Middle Name" required>
             <input type="text" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
-            <input type="password" name="confirmPassword" placeholder="Confirm Password" required><br>
+            <input type="password" name="confirmPassword" placeholder="Confirm Password" required><br><br><br>
             <input type="submit" name="submit" value="Submit">
         </form>
     </div>

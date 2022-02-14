@@ -5,10 +5,10 @@
 <div class="container login">
     <div class="login-form">
         <form action="includes/login.inc.php" method="post">
-            <h2>Login</h2>
+            <h2>Login</h2><br><br>
             <input type="text" name="username" placeholder="Username/Email..." required>
             <input type="password" name="password" placeholder="Password" required><br><br>
-            <input type="submit" name="submit" value="Login"><br>
+            <input type="submit" name="submit" value="Login"><br><br>
             <a href="forgot-password.php">Forgot Password?</a>
         </form>
     </div>
