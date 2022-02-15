@@ -9,7 +9,7 @@
             <input type="text" name="username" placeholder="Username/Email..." required>
             <input type="password" name="password" placeholder="Password" required><br><br>
             <input type="submit" name="submit" value="Login"><br><br>
-            <a href="forgot-password.php">Forgot Password?</a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Forgot Password?</a>
         </form>
     </div>
     <?php
