@@ -117,22 +117,22 @@
                 <div class="q8">
                     <li><b>What is Person 1’s race?</b> Mark one or more boxes AND print origins.</li>
 
-                    <input type="radio" name="q8" id="q8o1" value="q8o1" onclick="EnableRaceOne(this);">
+                <input type="radio" name="q8" id="q8o1" value="White" onclick="EnableRaceOne(this);">
                     <label for="q8o1">White – Print, for example, German, Irish, English, Italian,
         Lebanese, Egyptian, etc.</label><br>
-                    <input type="text" class="race1" name="race1" id="race1" disabled="disabled">
+                    <input type="text" class="race1" name="q8o1" id="race1" disabled="disabled">
                     <br>
-                    <input type="radio" name="q8" id="q8o2" value="q8o2" onclick="EnableRaceTwo(this);">
+                    <input type="radio" name="q8" id="q8o2" value="Black" onclick="EnableRaceTwo(this);">
                     <label for="q8o2">Black or African Am. – Print, for example, African American,
         Jamaican, Haitian, Nigerian, Ethiopian, Somali, etc.</label><br>
-                    <input type="text" class="race2" name="race2" id="race2" disabled="disabled">
+                    <input type="text" class="race2" name="q8o2" id="race2" disabled="disabled">
                     <br>
-                    <input type="radio" name="q8" id="q8o3" value="q8o3" onclick="EnableRaceThree(this);">
+                    <input type="radio" name="q8" id="q8o3" value="Indian" onclick="EnableRaceThree(this);">
                     <label for="q8o3">American Indian or Alaska Native – Print name of enrolled or
         principal tribe(s), for example, Navajo Nation, Blackfeet Tribe,
         Mayan, Aztec, Native Village of Barrow Inupiat Traditional
         Government, Nome Eskimo Community, etc.</label><br>
-                    <input type="text" class="race3" name="race3" id="race3" disabled="disabled">
+                    <input type="text" class="race3" name="q8o3" id="race3" disabled="disabled">
                     <br>
                     <input type="radio" name="q8" id="chinese" value="Chinese">
                     <label for="chinese">Chinese</label>
@@ -155,7 +155,7 @@
                     <input type="radio" name="q8" id="chamorro" value="Chamorro">
                     <label for="chamorro">Chamorro</label>
                     <br>
-                    <input type="radio" name="q8" id="q8o4" value="q8o4" onclick="EnableRaceFour(this);">
+                    <input type="radio" name="q8" id="q8o4" value="Some" onclick="EnableRaceFour(this);">
                     <label for="q8o4">Some other race – Print race or origin.</label><br>
                     <input type="text" class="race4" name="race4" id="race4" disabled="disabled"><br>
                 </div>

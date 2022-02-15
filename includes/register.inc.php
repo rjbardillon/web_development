@@ -19,21 +19,26 @@ if (isset($_POST['register'])) {
     $lastName = $_POST['lName'];
     $gender = $_POST['q6'];
     $birthday = date('Y-m-d', strtotime($_POST['q7']));
-    if ($_POST['q8'] == "q801") {
-        $race = $_POST['race1'];
-    } elseif ($_POST['q8'] == "q802") {
-        $race = $_POST['race2'];
-    } elseif ($_POST['q8'] == "q803") {
-        $race = $_POST['race3'];
-    } elseif ($_POST['q8'] == "q804") {
-        $race = $_POST['race4'];
+    if ($_POST['q8'] == "White") {
+        $race = $_POST['q8o1'];
+        $type = "White";
+    } elseif ($_POST['q8'] == "Black") {
+        $race = $_POST['q8o2'];
+        $type = "Black";
+    } elseif ($_POST['q8'] == "Indian") {
+        $race = $_POST['q8o3'];
+        $type = "Indian";
+    } elseif ($_POST['q8'] == "Some") {
+        $race = $_POST['q8o4'];
+        $type = "Some";
     } else {
         $race = $_POST['q8'];
+        $type = NULL;
     }
     
     insertData($connection, $username, $q1, $q2o1, $q2o2, $q2o3, 
                 $q2o4, $q2o5, $q3, $phoneNumber, $firstName, $middleName,
-                $lastName, $gender, $birthday, $race);
+                $lastName, $gender, $birthday, $race, $type);
 } else {
     header("location: ../home.php");
     exit();
