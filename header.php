@@ -9,6 +9,7 @@
     <script src="includes/functionality.js"></script>
     <title><?php 
                 if($page == 'registration'){echo 'Registration';}
+                elseif($page == 'profile'){echo 'Profile';}
                 elseif($page == 'index'){echo 'Census';}
                 elseif($page == 'login'){echo 'Login';}
                 elseif($page == 'create-account'){echo 'Create Account';}
@@ -28,8 +29,14 @@
         />
         <li><a href="index.php">Home</a></li>
         <?php
+          require_once 'includes/dbh.inc.php';
+          require_once 'includes/functions.inc.php';
           if (isset($_SESSION['username'])) {
-            echo '<li><a href="register.php">Register</a></li>';
+            if (userExists($connection, $_SESSION['username'])) {
+              echo '<li><a href="profile.php">Profile</a></li>';
+            } else {
+              echo '<li><a href="register.php">Register</a></li>';
+            }
             echo '<li><a href="includes/logout.inc.php">Log Out</a></li>';
           } 
           else {

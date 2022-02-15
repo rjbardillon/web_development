@@ -1,5 +1,5 @@
 function EnableRaceOne(check) {
-  var input = document.getElementById("race1")
+  var input = document.getElementById('race1')
   input.disabled = check.checked ? false : true
   if (!input.disabled) {
     input.focus()
@@ -7,7 +7,7 @@ function EnableRaceOne(check) {
 }
 
 function EnableRaceTwo(check) {
-  var input = document.getElementById("race2")
+  var input = document.getElementById('race2')
   input.disabled = check.checked ? false : true
   if (!input.disabled) {
     input.focus()
@@ -15,7 +15,7 @@ function EnableRaceTwo(check) {
 }
 
 function EnableRaceThree(check) {
-  var input = document.getElementById("race3")
+  var input = document.getElementById('race3')
   input.disabled = check.checked ? false : true
   if (!input.disabled) {
     input.focus()
@@ -23,9 +23,14 @@ function EnableRaceThree(check) {
 }
 
 function EnableRaceFour(check) {
-  var input = document.getElementById("race4")
+  var input = document.getElementById('race4')
   input.disabled = check.checked ? false : true
   if (!input.disabled) {
     input.focus()
   }
+}
+
+function numbersOnly(input) {
+  var regex = /[^0-9]/gi
+  input.value = input.value.replace(regex, '')
 }

@@ -58,6 +58,29 @@ function usernameExists($connection, $username, $email){
     mysqli_stmt_close($stmt);
 }
 
+function userExists($connection, $username){
+    $sql = "SELECT * FROM user_data WHERE username=?";
+    $stmt = mysqli_stmt_init($connection);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../create-account.php?error=stmterror");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $username);
+    mysqli_stmt_execute($stmt);
+
+    $result = mysqli_stmt_get_result($stmt);
+    if ($row = mysqli_fetch_assoc($result)) {
+        return $row;
+    } 
+    else {
+        $result = false;
+        return $result;
+    }
+
+    mysqli_stmt_close($stmt);
+}
+
 function loginUser($connection, $username, $password){
     $usernameExists = usernameExists($connection, $username, $username);
 

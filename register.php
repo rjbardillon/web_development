@@ -44,7 +44,7 @@
                 <div class="q1">
                     <li><b>How many people were living or staying in this house,
         apartment, or mobile home on April 1, 2020?</b></li>
-                    <input type="text" name="q1">
+                    <input type="number" name="q1" max="99" maxlength="2" onkeyup="numbersOnly(this);" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                 </div>
                 <!-- 2 -->
                 <div class="q2">
@@ -84,7 +84,7 @@
                     <li><b>What is your telephone number?</b> We will only contact you if needed for official Census Bureau
         business.</li>
                     <label for="phone">Cellphone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="9123456789" maxlength="10">
+                    <input type="tel" id="phone" name="phone" placeholder="9123456789" maxlength="10" onkeyup="numbersOnly(this);">
                 </div>
                     <!-- 5 -->
                 <div class="q5">
