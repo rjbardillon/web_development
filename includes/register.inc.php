@@ -25,7 +25,7 @@ if (isset($_POST['register'])) {
     } elseif ($_POST['q8'] == "Black") {
         $race = $_POST['q8o2'];
         $type = "Black";
-    } elseif ($_POST['q8'] == "Indian") {
+    } elseif ($_POST['q8'] == "Alaska") {
         $race = $_POST['q8o3'];
         $type = "Indian";
     } elseif ($_POST['q8'] == "Some") {

@@ -32,6 +32,7 @@
           require_once 'includes/dbh.inc.php';
           require_once 'includes/functions.inc.php';
           if (isset($_SESSION['username'])) {
+            echo '<div class="profile-name">Welcome, <br>'; echo ($_SESSION["givenName"]." ".$_SESSION["middleName"]." ".$_SESSION["surname"]); echo '</div>';
             if (userExists($connection, $_SESSION['username'])) {
               echo '<li><a href="profile.php">Profile</a></li>';
             } else {
@@ -44,5 +45,37 @@
             echo '<li><a href="create-account.php">Create Account</a></li>';
           }
         ?>
+        <div class="display"></div>
+        <script>
+          setInterval(function () {
+            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            const clock = document.querySelector('.display')
+            let time = new Date()
+            let sec = time.getSeconds()
+            let min = time.getMinutes()
+            let hr = time.getHours()
+            let month = time.getMonth()
+            let year = time.getFullYear()
+            let date = time.getDate()
+            let day = 'AM'
+            if (hr > 12) {
+              day = 'PM'
+              hr = hr - 12
+            }
+            if (hr == 0) {
+              hr = 12
+            }
+            if (sec < 10) {
+              sec = '0' + sec
+            }
+            if (min < 10) {
+              min = '0' + min
+            }
+            if (hr < 10) {
+              hr = '0' + hr
+            }
+            clock.textContent = months[month] + ' ' + date + ' '  + year + '\n' + hr + ':' + min + ':' + sec + ' ' + day;
+          })
+        </script>
       </ul>
     </nav>

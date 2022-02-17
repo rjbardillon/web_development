@@ -57,8 +57,5 @@
         </div>
       
     </div>
-<!-- <div class="container home">
-    <h1>Home Page</h1>
-</div> -->
 
 <?php include('footer.php'); ?>

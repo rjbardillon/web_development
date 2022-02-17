@@ -31,20 +31,20 @@
         $raceType = $user_data['raceType'];
     ?>
     <div class="container profile">
-        <h1>Registration Page</h1>
+        <h1>Profile</h1>
         <div class="questionnaire">
-            <form action="includes/register.inc.php" method="POST">
+            <form action="includes/update.inc.php" method="POST">
                 <ol>
                     <!-- 1 -->
                     <div class="q1">
                         <li><b>How many people were living or staying in this house,
-            apartment, or mobile home on April 1, 2020?</b></li>
-                        <input type="number" name="q1" max="99" maxlength="2" value="<?php echo ($q1) ?>" disabled onkeyup="numbersOnly(this);" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+            apartment, or mobile home on April 1, 2020?</b><input type="button" value="edit" onclick="enableEditingQ1(this);"></li>
+                        <input type="number" id="q1" name="q1" max="99" maxlength="2" value="<?php echo ($q1) ?>" readonly onkeyup="numbersOnly(this);" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     </div>
                     <!-- 2 -->
                     <div class="q2">
                         <li><b>Were there any additional people staying here on April 1, 2020
-            that you did not include in Question 1? Check all that apply.</b> </li>
+            that you did not include in Question 1? Check all that apply.</b><input type="button" value="edit" onclick="enableEditingQ2(this);"> </li>
                         <input type="checkbox" name="q2o1" id="o1" value="Children, related or unrelated, such as newborn babies,
             grandchildren, or foster children" <?php if ($q2o1 != NULL) {
                 echo "checked";
@@ -70,7 +70,7 @@
                     </div>
                     <!-- 3 -->
                     <div class="q3">
-                        <li><b>Is this house, apartment, or mobile home?</b></li>
+                        <li><b>Is this house, apartment, or mobile home?</b><input type="button" value="edit" onclick="enableEditingQ3(this);"></li>
                         <input type="radio" name="q3" id="q3o1" value="Owned by you or someone in this household with a mortgage or loan? Include home equity loans." 
                         <?php if ($q3 == "Owned by you or someone in this household with a mortgage
         or loan? Include home equity loans.") {
@@ -95,9 +95,9 @@
                     <!-- 4 -->
                     <div class="q4">
                         <li><b>What is your telephone number?</b> We will only contact you if needed for official Census Bureau
-            business.</li>
+            business.<input type="button" value="edit" onclick="enableEditingQ4(this);"></li>
                         <label for="phone">Cellphone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="9123456789" maxlength="10" value="<?php echo ($phone) ?>" disabled onkeyup="numbersOnly(this);">
+                        <input type="tel" id="phone" name="phone" placeholder="9123456789" maxlength="10" value="<?php echo ($phone) ?>" readonly onkeyup="numbersOnly(this);">
                     </div>
                         <!-- 5 -->
                     <div class="q5">
@@ -105,34 +105,34 @@
                         there is someone living here who pays the rent or owns this
                         residence, start by listing him or her as Person 1. If the
                         owner or the person who pays the rent does not live here,
-            start by listing any adult living here as Person 1. <br>What is Person 1’s name? </b>Print name below.</li><br>
+            start by listing any adult living here as Person 1. <br>What is Person 1’s name? </b>Print name below.<input type="button" value="edit" onclick="enableEditingQ5(this);"></li><br>
                         <label for="fName">First Name</label><br>
-                        <input type="text" name="fName" id="fName" value="<?php echo ($firstName) ?>" disabled oninput="this.value = this.value.toUpperCase()" maxlength="50"><br>
+                        <input type="text" name="fName" id="fName" value="<?php echo ($firstName) ?>" readonly oninput="this.value = this.value.toUpperCase()" maxlength="50"><br>
                         <label for="MI">Middle Initial</label><br>
-                        <input type="text" name="MI" id="MI" value="<?php echo ($middleName) ?>" disabled oninput="this.value = this.value.toUpperCase()" maxlength="1"><br>
+                        <input type="text" name="MI" id="MI" value="<?php echo ($middleName) ?>" readonly oninput="this.value = this.value.toUpperCase()" maxlength="1"><br>
                         <label for="lName">Last Name</label><br>
-                        <input type="text" name="lName" id="lName" value="<?php echo ($lastName) ?>" disabled oninput="this.value = this.value.toUpperCase()" maxlength="60"><br>
+                        <input type="text" name="lName" id="lName" value="<?php echo ($lastName) ?>" readonly oninput="this.value = this.value.toUpperCase()" maxlength="60"><br>
                     </div>
                         <!-- 6 -->
                     <div class="q6">
-                        <li><b>What is Person 1’s sex?</b></li>
+                        <li><b>What is Person 1’s sex?</b><input type="button" value="edit" onclick="enableEditingQ6(this);"></li>
                         <input type="radio" id="male" name="q6" value="Male" <?php if ($gender == "Male") {
                 echo "checked";
-            } ?>>
+            } ?> readonly>
                         <label for="male">Male</label>
                         <input type="radio" id="female" name="q6" value="Female" <?php if ($gender == "Female") {
                 echo "checked";
-            } ?>>
+            } ?> readonly>
                         <label for="female">Female</label>
                     </div>
                         <!-- 7 -->
                     <div class="q7">
-                        <li><b>What is Person 1’s date of birth?</b></li>
-                        <input type="date" name="q7" value="<?php echo($birthday); ?>" disabled>
+                        <li><b>What is Person 1’s date of birth?</b><input type="button" value="edit" onclick="enableEditingQ7(this);"></li>
+                        <input type="date" id="q7" name="q7" value="<?php echo($birthday); ?>" readonly>
                     </div>
                     <!-- 8 -->
                     <div class="q8">
-                        <li><b>What is Person 1’s race?</b> Mark one or more boxes AND print origins.</li>
+                        <li><b>What is Person 1’s race?</b> Mark one or more boxes AND print origins.<input type="button" value="edit" onclick="enableEditingQ8(this);"></li>
 
                         <input type="radio" name="q8" id="q8o1" value="White" onclick="EnableRaceOne(this);" <?php if ($raceType == "White") {
                 echo "checked";
@@ -152,52 +152,52 @@
                             echo($race);
                         } ?>" required>
                         <br>
-                        <input type="radio" name="q8" id="q8o3" value="Indian" onclick="EnableRaceThree(this);" <?php if ($raceType == "Indian") {
+                        <input type="radio" name="q8" id="q8o3" value="Alaska" onclick="EnableRaceThree(this);" <?php if ($raceType == "Alaska") {
                 echo "checked";
             } ?> disabled>
                         <label for="q8o3">American Indian or Alaska Native – Print name of enrolled or
             principal tribe(s), for example, Navajo Nation, Blackfeet Tribe,
             Mayan, Aztec, Native Village of Barrow Inupiat Traditional
             Government, Nome Eskimo Community, etc.</label><br>
-                        <input type="text" class="race3" name="q8o3" id="race3" disabled="disabled" value="<?php if ($raceType == "Indian") {
+                        <input type="text" class="race3" name="q8o3" id="race3" disabled="disabled" value="<?php if ($raceType == "Alaska") {
                             echo($race);
                         } ?>" required>
                         <br>
-                        <input type="radio" name="q8" id="chinese" value="Chinese" <?php if ($raceType == "Chinese") {
+                        <input type="radio" name="q8" id="chinese" value="Chinese" <?php if ($race == "Chinese") {
                 echo "checked";
             } ?> disabled>
                         <label for="chinese">Chinese</label>
-                        <input type="radio" name="q8" id="vietnamese" value="Vietnamese" <?php if ($raceType == "Vietnamese") {
+                        <input type="radio" name="q8" id="vietnamese" value="Vietnamese" <?php if ($race == "Vietnamese") {
                 echo "checked";
             } ?> disabled>
                         <label for="vietnamese">Vietnamise</label>
-                        <input type="radio" name="q8" id="native-hawaiian" value="Native Hawaiian" <?php if ($raceType == "Native Hawaiian") {
+                        <input type="radio" name="q8" id="native-hawaiian" value="Native Hawaiian" <?php if ($race == "Native Hawaiian") {
                 echo "checked";
             } ?> disabled>
                         <label for="native-hawaiian">Native Hawaiian</label>
                         <br>
-                        <input type="radio" name="q8" id="filipino" value="Filipino" <?php if ($raceType == "Filipino") {
+                        <input type="radio" name="q8" id="filipino" value="Filipino" <?php if ($race == "Filipino") {
                 echo "checked";
             } ?> disabled>
                         <label for="filipino">Filipino</label>
-                        <input type="radio" name="q8" id="korean" value="Korean" <?php if ($raceType == "Korean") {
+                        <input type="radio" name="q8" id="korean" value="Korean" <?php if ($race == "Korean") {
                 echo "checked";
             } ?> disabled>
                         <label for="korean">Korean</label>
-                        <input type="radio" name="q8" id="samoan" value="Samoan" <?php if ($raceType == "Samoan") {
+                        <input type="radio" name="q8" id="samoan" value="Samoan" <?php if ($race == "Samoan") {
                 echo "checked";
             } ?> disabled>
                         <label for="samoan">Samoan</label>
                         <br>
-                        <input type="radio" name="q8" id="indian" value="Indian" <?php if ($raceType == "Indian") {
+                        <input type="radio" name="q8" id="indian" value="Indian" <?php if ($race == "Indian") {
                 echo "checked";
             } ?> disabled>
                         <label for="indian">Indian</label>
-                        <input type="radio" name="q8" id="japanese" value="Japanese" <?php if ($raceType == "Japanese") {
+                        <input type="radio" name="q8" id="japanese" value="Japanese" <?php if ($race == "Japanese") {
                 echo "checked";
             } ?> disabled>
                         <label for="japanese">Japanese</label>
-                        <input type="radio" name="q8" id="chamorro" value="Chamorro" <?php if ($raceType == "Chamorro") {
+                        <input type="radio" name="q8" id="chamorro" value="Chamorro" <?php if ($race == "Chamorro") {
                 echo "checked";
             } ?> disabled>
                         <label for="chamorro">Chamorro</label>
@@ -210,8 +210,11 @@
                             echo($race);
                         } ?>" required><br>
                     </div>
-                    <input type="submit" name="register" value="Register">
+                    <input type="submit" name="update" value="Update">
                 </ol>
             </form>
         </div>
+        <?php
+            include('footer.php'); 
+        ?>
     </div>
