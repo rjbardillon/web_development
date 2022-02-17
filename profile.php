@@ -118,11 +118,11 @@
                         <li><b>What is Person 1’s sex?</b><input type="button" value="edit" onclick="enableEditingQ6(this);"></li>
                         <input type="radio" id="male" name="q6" value="Male" <?php if ($gender == "Male") {
                 echo "checked";
-            } ?> readonly>
+            } ?> disabled>
                         <label for="male">Male</label>
                         <input type="radio" id="female" name="q6" value="Female" <?php if ($gender == "Female") {
                 echo "checked";
-            } ?> readonly>
+            } ?> disabled>
                         <label for="female">Female</label>
                     </div>
                         <!-- 7 -->

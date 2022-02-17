@@ -12,7 +12,6 @@ if (isset($_POST['update'])) {
     $firstName = $_POST['fName'];
     $middleName = $_POST['MI'];
     $lastName = $_POST['lName'];
-    $gender = $_POST['q6'];
     $birthday = date('Y-m-d', strtotime($_POST['q7']));
  
     if ($_POST['q2o1'] == "") {
@@ -45,6 +44,13 @@ if (isset($_POST['update'])) {
     } else {
         $q3 = $_POST['q3'];
     }
+
+    if ($_POST['q6'] == "") {
+        $gender = $currentData['gender'];
+    } else {
+        $gender = $_POST['q6'];
+    }
+
     if ($_POST['q8'] == "") {
         $race = $currentData['race'];
         $type = $currentData['raceType'];
