@@ -42,9 +42,9 @@
                         <input type="number" id="q1" name="q1" max="99" maxlength="2" value="<?php echo ($q1) ?>" readonly onkeyup="numbersOnly(this);" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                     </div>
                     <!-- 2 -->
-                    <div class="q2">
+                    <div class="q2" id="q2">
                         <li><b>Were there any additional people staying here on April 1, 2020
-            that you did not include in Question 1? Check all that apply.</b><input type="button" value="edit" onclick="enableEditingQ2(this);"> </li>
+            that you did not include in Question 1? Check all that apply.</b><input type="button" name="clicked" value="edit" onclick="enableEditingQ2(this);"> </li>
                         <input type="checkbox" name="q2o1" id="o1" value="Children, related or unrelated, such as newborn babies,
             grandchildren, or foster children" <?php if ($q2o1 != NULL) {
                 echo "checked";
@@ -72,14 +72,12 @@
                     <div class="q3">
                         <li><b>Is this house, apartment, or mobile home?</b><input type="button" value="edit" onclick="enableEditingQ3(this);"></li>
                         <input type="radio" name="q3" id="q3o1" value="Owned by you or someone in this household with a mortgage or loan? Include home equity loans." 
-                        <?php if ($q3 == "Owned by you or someone in this household with a mortgage
-        or loan? Include home equity loans.") {
+                        <?php if ($q3 == "Owned by you or someone in this household with a mortgage or loan? Include home equity loans.") {
                 echo "checked";
             } ?> disabled>
                         <label for="q3o1">Owned by you or someone in this household with a mortgage or loan? Include home equity loans.</label><br>
                         <input type="radio" name="q3" id="q3o2" value="Owned by you or someone in this household free and clear (without a mortgage or loan)?"
-                        <?php if ($q3 == "Owned by you or someone in this household free and clear
-        (without a mortgage or loan)?") {
+                        <?php if ($q3 == "Owned by you or someone in this household free and clear (without a mortgage or loan)?") {
                 echo "checked";
             } ?> disabled>
                         <label for="q3o2">Owned by you or someone in this household free and clear (without a mortgage or loan)?</label><br>

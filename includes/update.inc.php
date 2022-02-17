@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST['update'])) {
+if (isset($_POST['update']) OR isset($_POST['save'])) {
     session_start();
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
@@ -13,44 +13,55 @@ if (isset($_POST['update'])) {
     $middleName = $_POST['MI'];
     $lastName = $_POST['lName'];
     $birthday = date('Y-m-d', strtotime($_POST['q7']));
- 
-    if ($_POST['q2o1'] == "") {
-        $q2o1 = $currentData['q2o1'];
-    } else {
+    
+    //q2
+    if (isset($_POST['update']) OR isset($_POST['save'])) {
         $q2o1 = $_POST['q2o1'];
-    }
-    if ($_POST['q2o2'] == "") {
-        $q2o2 = $currentData['q2o2'];
-    } else {
-        $q2o2 = $_POST['q2o2'];
-    }
-    if ($_POST['q2o3'] == "") {
-        $q2o3 = $currentData['q2o3'];
-    } else {
-        $q2o3 = $_POST['q2o3'];
-    }
-    if ($_POST['q2o4'] == "") {
-        $q2o4 = $currentData['q2o4'];
-    } else {
-        $q2o4 = $_POST['q2o4'];
-    }
-    if ($q2o5 == "") {
-        $q2o5 = $currentData['q2o5'];
-    } else {
+        $q2o2 = $_POST['q2o2'];       
+        $q2o3 = $_POST['q2o3'];      
+        $q2o4 = $_POST['q2o4'];       
         $q2o5 = $_POST['q2o5'];
+    } 
+    else {
+        if ($_POST['q2o1'] == NULL) {
+            $q2o1 = $currentData['q2o1'];
+        } else {
+            $q2o1 = $_POST['q2o1'];
+        }
+        if ($_POST['q2o2'] == NULL) {
+            $q2o2 = $currentData['q2o2'];
+        } else {
+            $q2o2 = $_POST['q2o2'];
+        }
+        if ($_POST['q2o3'] == NULL) {
+            $q2o3 = $currentData['q2o3'];
+        } else {
+            $q2o3 = $_POST['q2o3'];
+        }
+        if ($_POST['q2o4'] == NULL) {
+            $q2o4 = $currentData['q2o4'];
+        } else {
+            $q2o4 = $_POST['q2o4'];
+        }
+        if ($_POST['q2o5'] == NULL) {
+            $q2o5 = $currentData['q2o5'];
+        } else {
+            $q2o5 = $_POST['q2o5'];
+        }
     }
+    //q3
     if ($_POST['q3'] == "") {
         $q3 = $currentData['q3'];
     } else {
         $q3 = $_POST['q3'];
     }
-
+    //q6
     if ($_POST['q6'] == "") {
         $gender = $currentData['gender'];
     } else {
         $gender = $_POST['q6'];
     }
-
+    //q8
     if ($_POST['q8'] == "") {
         $race = $currentData['race'];
         $type = $currentData['raceType'];

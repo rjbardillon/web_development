@@ -43,6 +43,11 @@ function enableEditingQ1(check) {
 }
 
 function enableEditingQ2(check) {
+  let btn = document.createElement('button')
+  btn.innerHTML = 'save'
+  btn.type = 'submit'
+  btn.name = 'save'
+  document.getElementById("q2").appendChild(btn)
   var o1 = document.getElementById('o1')
   var o2 = document.getElementById('o2')
   var o3 = document.getElementById('o3')
@@ -92,8 +97,8 @@ function enableEditingQ6(check) {
   var male = document.getElementById('male')
   var female = document.getElementById('female')
   if (check.value == 'edit') {
-    male.removeAttribute('readonly')
-    female.removeAttribute('readonly')
+    male.removeAttribute('disabled')
+    female.removeAttribute('disabled')
   }
 }
 
@@ -138,4 +143,3 @@ function enableEditingQ8(check) {
     chamorro.removeAttribute('disabled')
   }
 }
-
