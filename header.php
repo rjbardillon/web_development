@@ -27,7 +27,7 @@
           alt="Carmona Logo"
           class="carmona-logo"
         />
-        <li><a href="index.php">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <?php
           require_once 'includes/dbh.inc.php';
           require_once 'includes/functions.inc.php';

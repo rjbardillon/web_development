@@ -3,7 +3,7 @@
     $page = "home";
     include('header.php');
     if (!isset($_SESSION['username'])) {
-        header("location: index.php");
+        header("location: index.html");
         exit();
     }
 ?>
