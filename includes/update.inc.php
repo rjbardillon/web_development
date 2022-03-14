@@ -89,6 +89,6 @@ if (isset($_POST['update']) OR isset($_POST['save'])) {
                 $q2o4, $q2o5, $q3, $phoneNumber, $firstName, $middleName,
                 $lastName, $gender, $birthday, $race, $type);
 } else {
-    header("location: ../home.php");
+    header("location: ../home.html");
     exit();
 }

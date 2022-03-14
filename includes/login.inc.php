@@ -10,6 +10,6 @@ if (isset($_POST['submit'])) {
     loginUser($connection, $username, $password);
 }
 else {
-    header("location: ../login.php");
+    header("location: ../login.html");
     exit();
 }

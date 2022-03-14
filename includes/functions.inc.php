@@ -31,7 +31,7 @@ function insertUser($connection, $surname, $givenName, $middleName, $email, $use
     mysqli_stmt_bind_param($stmt, "ssssss", $surname, $givenName, $middleName, $email, $username, $hashedPassword);
     mysqli_stmt_execute($stmt); 
     mysqli_stmt_close($stmt);
-    header("location: ../create-account.php?error=none&username=".$username);
+    header("location: ../create-account.html?error=none&username=".$username);
     exit();
 }
 
@@ -39,7 +39,7 @@ function usernameExists($connection, $username, $email){
     $sql = "SELECT * FROM users WHERE username=? OR email=?";
     $stmt = mysqli_stmt_init($connection);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../create-account.php?error=stmterror");
+        header("location: ../create-account.html?error=stmterror");
         exit();
     }
 
@@ -62,7 +62,7 @@ function userExists($connection, $username){
     $sql = "SELECT * FROM user_data WHERE username=?";
     $stmt = mysqli_stmt_init($connection);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../create-account.php?error=stmterror");
+        header("location: ../create-account.html?error=stmterror");
         exit();
     }
 
@@ -85,14 +85,14 @@ function loginUser($connection, $username, $password){
     $usernameExists = usernameExists($connection, $username, $username);
 
     if ($usernameExists === false) {
-        header("location: ../login.php?error=wrongaccount");
+        header("location: ../login.html?error=wrongaccount");
         exit();
     }
     $passwordhashed = $usernameExists['password'];
     $checkPassword = password_verify($password, $passwordhashed);
 
     if ($checkPassword === false) {
-        header("location: ../login.php?error=wrongpassword");
+        header("location: ../login.html?error=wrongpassword");
         exit();
     }
     else if($checkPassword === true) {
@@ -102,7 +102,7 @@ function loginUser($connection, $username, $password){
         $_SESSION['middleName'] = $usernameExists['middleName'];
         $_SESSION['givenName'] = $usernameExists['givenName'];
         $_SESSION['email'] = $usernameExists['email'];
-        header("location: ../home.php");
+        header("location: ../home.html");
         exit();
     }
 }
@@ -114,7 +114,7 @@ function insertData($connection, $username, $q1, $q2o1, $q2o2, $q2o3,
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($connection);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../home.php?error=stmterror");
+        header("location: ../home.html?error=stmterror");
         exit();
     }
     mysqli_stmt_bind_param($stmt, "ssssssssssssssss",$username, $q1, $q2o1, $q2o2, $q2o3, 
@@ -123,7 +123,7 @@ function insertData($connection, $username, $q1, $q2o1, $q2o2, $q2o3,
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    header("location: ../home.php?error=none");
+    header("location: ../home.html?error=none");
     exit();
 }
 
@@ -134,7 +134,7 @@ function updateData($connection, $username, $q1, $q2o1, $q2o2, $q2o3,
      middleName = ?, lastName = ?, gender = ?, birthday = ?, race = ?, raceType = ? WHERE username = ?;";
     $stmt = mysqli_stmt_init($connection);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../home.php?error=stmterror");
+        header("location: ../home.html?error=stmterror");
         exit();
     }
     mysqli_stmt_bind_param($stmt, "ssssssssssssssss", $q1, $q2o1, $q2o2, $q2o3, 
@@ -143,6 +143,6 @@ function updateData($connection, $username, $q1, $q2o1, $q2o2, $q2o3,
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    header("location: ../home.php?error=none");
+    header("location: ../home.html?error=none");
     exit();
 }

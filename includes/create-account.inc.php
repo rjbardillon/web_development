@@ -13,21 +13,21 @@ if (isset($_POST['submit'])) {
     require_once 'functions.inc.php';
 
     if (invalidEmail($email) !== false) {
-        header("location: ../create-account.php?error=invalidemail");
+        header("location: ../create-account.html?error=invalidemail");
         exit();
     }
     if (usernameExists($connection, $username, $email) !== false) {
-        header("location: ../create-account.php?error=usernametaken");
+        header("location: ../create-account.html?error=usernametaken");
         exit();
     }
     if (passwordMatch($password, $confirmPassword) !== false) {
-        header("location: ../create-account.php?error=passwordnotmatch");
+        header("location: ../create-account.html?error=passwordnotmatch");
         exit();
     }
     insertUser($connection, $surname, $givenName, $middleName, $email, $username, $password);
     
 }
 else {
-    header("location: ../create-account.php");
+    header("location: ../create-account.html");
     exit();
 }

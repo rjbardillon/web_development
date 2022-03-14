@@ -34,15 +34,15 @@
           if (isset($_SESSION['username'])) {
             echo '<div class="profile-name">Welcome, <br>'; echo ($_SESSION["givenName"]." ".$_SESSION["middleName"]." ".$_SESSION["surname"]); echo '</div>';
             if (userExists($connection, $_SESSION['username'])) {
-              echo '<li><a href="profile.php">Profile</a></li>';
+              echo '<li><a href="profile.html">Profile</a></li>';
             } else {
-              echo '<li><a href="register.php">Register</a></li>';
+              echo '<li><a href="register.html">Register</a></li>';
             }
             echo '<li><a href="includes/logout.inc.php">Log Out</a></li>';
           } 
           else {
-            echo '<li><a href="login.php">Login</a></li>';
-            echo '<li><a href="create-account.php">Create Account</a></li>';
+            echo '<li><a href="login.html">Login</a></li>';
+            echo '<li><a href="create-account.html">Create Account</a></li>';
           }
         ?>
         <div class="display"></div>

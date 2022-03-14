@@ -1,7 +1,7 @@
 <?php
     session_start();
     $page = "registration";
-    include('header.php');
+    include('header.html');
     if (!isset($_SESSION['username'])) {
         header("location: index.html");
         exit();
@@ -169,6 +169,6 @@
     </div>
     
 <?php
-     include('footer.php'); 
+     include('footer.html'); 
 ?>
 </div>

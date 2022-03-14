@@ -40,6 +40,6 @@ if (isset($_POST['register'])) {
                 $q2o4, $q2o5, $q3, $phoneNumber, $firstName, $middleName,
                 $lastName, $gender, $birthday, $race, $type);
 } else {
-    header("location: ../home.php");
+    header("location: ../home.html");
     exit();
 }
