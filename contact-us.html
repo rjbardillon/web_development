@@ -1,11 +1,15 @@
 <?php 
+    require $_SERVER['DOCUMENT_ROOT'].'/web_development/vendor/autoload.php';
+    $MessageBird = new \MessageBird\Client('C8AdWk3XE2UOHVSQK23PlhzZM');
+    $Message = new \MessageBird\Objects\Message();
+    $Message->originator = 'AARON';
+    $Message->recipients = array(+639760657071);
+    $Message->body = 'Hello This is a Test message!';
+    
+    print_r(json_encode($MessageBird->messages->create($Message)));
     session_start();
     $page = "contact";
     include('header.html');
-    if (!isset($_SESSION['username'])) {
-        header("location: index.html");
-        exit();
-    }
 ?>
 
 <div class="container home">
